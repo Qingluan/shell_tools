@@ -1,0 +1,13 @@
+#!/bin/sh
+
+task="$( ps aux | grep $1 | egrep -v '(grep)|(killGrep)|(root)' )"
+echo "task : \n\t $task"
+echo "if kill these task [y/n]"
+read res
+if [  $res == "y" -o $res == "Y"  ] ;
+then
+	echo "$( ps aux | grep $1 | egrep -v '(grep)|(killGrep)|(root)' | awk '{print $2}' | xargs kill -9  )"
+else
+	echo "noting to do.."
+fi
+
