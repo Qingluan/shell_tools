@@ -1,0 +1,2 @@
+git clone https://github.com/Qingluan/shell_tools.git && sleep(5) && cd shell_tools && /bin/bash setup.setup 
+
