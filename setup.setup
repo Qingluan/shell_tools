@@ -1,2 +1,1 @@
-echo $(sudo cp -a  $(ls ./ | xargs  egrep -v "(*.setup)|(*.md) ")  /usr/local/bin/);
-
+echo $(sudo cp -a  $(ls ./ |   egrep -v "(*.setup)|(*.md) ")  /usr/local/bin/);
