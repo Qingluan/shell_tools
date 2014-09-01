@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -d ".git" ]
+then 
+	git add . 
+	git commit -m "Stone-Gate" && sleep 4 ;
+	git push origin master;
+else 
+	echo "no git "
+fi 
+
+
