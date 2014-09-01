@@ -1,0 +1,26 @@
+#!/bin/sh
+
+
+content=$2
+line=$1
+ALL_LINES=$(cat -n  $3 | awk 'END {print $1 } ')
+echo $ALL_LINES;
+mv $3 "$3.bak";
+bak="$3.bak";
+if [ $line -gt 1 ] 
+then
+	part_one="$(head -n $(perl -E "say $line -1 ") $bak )";
+	last_one=$(tail -n  $(perl -E "say $ALL_LIENS - $line  - 2    ") $bak ) ;
+	echo  "$(echo  "$part_one" )"  >> $3 && echo  "$content" >> $3 && echo "$last_one" >> $3;
+
+else 
+	last=$(cat $bak);
+	echo "$content" >> $3;
+	echo "$last"  >>  $3 ;
+fi
+
+if echo  $* | grep "no-bak" 
+then 
+	echo "rm backup :";
+	rm $bak;
+fi
