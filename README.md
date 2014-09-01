@@ -22,3 +22,6 @@ shell_tools
 -echo_line
 > echo some string in any lines in a file 
 > <code> echo_line 5 "some ......" input-file </code> 
+-git_save_Stone_Gate
+> quick save git to web 
+> <code> git_save_Stone_Gate </code>
