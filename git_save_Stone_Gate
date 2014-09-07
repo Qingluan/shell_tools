@@ -6,6 +6,7 @@ if ! grep "fatal" ~/darkh.log/git.log
 then 
 	git add .; 
 	echo "$(git commit -m "Stone-Gate" && sleep 4)" ;
+	echo "push to $BRANCH_NAME ";
 	echo "$(git push origin $BRANCH_NAME)";
 else 
 	echo "no git " ;
