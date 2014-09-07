@@ -5,8 +5,8 @@ BRANCH_NAME=$(git branch | grep "*"| awk '{print $2 }' >& ~/darkh.log/git.log );
 if ! grep "fatal" ~/darkh.log/git.log 
 then 
 	git add .; 
-	git commit -m "Stone-Gate" && sleep 4 ;
-	git push origin $BRANCH_NAME;
+	echo "$(git commit -m "Stone-Gate" && sleep 4)" ;
+	echo "$(git push origin $BRANCH_NAME)";
 else 
 	echo "no git " ;
 	rm ~/darkh.log/git.log ;
