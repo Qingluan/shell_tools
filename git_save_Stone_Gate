@@ -1,8 +1,8 @@
 #!/bin/sh
 
-BRANCH_NAME=$(git branch | grep "*"| awk '{print $2 }' 2>& ~/darkh.log/git.log );
-
-if ! grep "fatal" ~/darkh.log/git.log 
+BRANCH_NAME=$(git branch | grep "*"| awk '{print $2 }' );
+echo $BRANCH_NAME;
+if [   $BRANCH_NAME ] 	
 then 
 	git add .; 
 	echo "$(git commit -m "Stone-Gate" && sleep 4)" ;
