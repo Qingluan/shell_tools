@@ -1,0 +1,5 @@
+#!/bin/sh
+
+$baidu=" www.baidu.com/s?ie=UTF-8&wd=$1";
+
+w3m $baidu;

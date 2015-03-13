@@ -1,0 +1,14 @@
+#!/bin/sh
+
+PRONAME=$1;
+mkdir -p "$PRONAME";
+
+cd $PRONAME && mkdir -p  "src" && mkdir -p "bin" && mkdir -p "resource" && mkdir -p "config" ;
+touch README.md && sleep 1;
+echo  "#$PRONAME  Document" >> README.md;
+echo  ">Include Part" >> README.md;
+echo  " - one " >> README.md;
+echo  " " >> README.md;
+echo  "## Introduction " >> README.md ;
+echo  "## Install " >> README.md;
+echo  "## Useage " >> README.md;

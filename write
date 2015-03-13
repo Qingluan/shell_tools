@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo $2 $1
+echo $2  > /dev/$1;

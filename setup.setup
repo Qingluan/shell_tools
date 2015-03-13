@@ -1,1 +1,25 @@
+#!/bin/bash
 echo $( ls ./ | egrep -v "(.\.setup)|(.\.md)" | xargs chmod +x  && sleep 1 && sudo cp -a  $(ls ./ |   egrep -v "(.\.setup)|(.\.md)")  /usr/local/bin/);
+
+unzip ./Oh-My-Zsh.zip  && sleep 2
+echo "unzip Environment ok "
+cp -a ./Users/darkh/.oh-my-zsh ~/ && sleep 1
+
+cp ./.zshrc ~/ && echo "cp .zshrc .. ok"
+
+
+IF_INSTALL_ZSH="$(ls /bin | egrep '(zsh)' )" ;
+IF_MAC_OR_LINUX="$(ls /  |egrep '(home)' )" ;  # if home dictory in "/" , we can sure this is linux os , else is Mac
+
+if [ $IF_MAC_OR_LINUX != "" ];
+then
+	echo "install ... zsh by apt ";
+	sudo apt-get install zsh  && sleep 1 && python -c "print '\a\a\a' " ;
+fi
+
+if [ $IF_INSTALL_ZSH != "" ] ;
+then
+	echo "zsh " >> ~/.bashrc && echo "zsh ready to build ... ok"
+else
+	echo "error no zsh . you should install  'zsh' before excute this script  "
+fi
